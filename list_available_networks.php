@@ -19,8 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connect_ssid'])) {
 
     // Display feedback
     if (strpos($result, 'successfully activated') !== false) {
-        echo "<p class='success'>Successfully connected to $ssid.</p>";
-        shell_exec("sudo reboot > /dev/null 2>&1 &");
+        echo "<p class='success'>Successfully connected to $ssid. Restart the 3D printer with the new wifi configuration and access to <a href='wwww.mito3d.com'> 3D printer app</a></p>";
     } else {
         echo "<p class='error'>Failed to connect to $ssid. Error: $result</p>";
     }
