@@ -1,8 +1,4 @@
 <?php
-// Fetch current connections
-$current_connections = shell_exec("nmcli -t -f NAME connection show");
-$current_connections = explode("\n", trim($current_connections));
-
 // Check if form data is submitted to connect to a new network
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connect_ssid'])) {
     $ssid = escapeshellarg($_POST['connect_ssid']);
@@ -24,6 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connect_ssid'])) {
         echo "<p class='error'>Failed to connect to $ssid. Error: $result</p>";
     }
 }
+// Fetch current connections
+$current_connections = shell_exec("nmcli -t -f NAME connection show");
+$current_connections = explode("\n", trim($current_connections));
+
 
 // Fetch available networks
 $networks = shell_exec("nmcli -t -f SSID,SIGNAL,SECURITY dev wifi");

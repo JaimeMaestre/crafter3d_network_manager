@@ -1,4 +1,12 @@
 <?php
+
+// Handle forgetting a connection
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['forget_ssid'])) {
+    $forget_ssid = escapeshellarg($_POST['forget_ssid']);
+    shell_exec("sudo nmcli connection delete id $forget_ssid");
+    echo "<p class='success'>$forget_ssid Forgot succesfully</p>";
+}
+
 // Get all saved connections
 $connections = shell_exec("nmcli -t -f NAME connection show");
 $connections = explode("\n", trim($connections));
@@ -27,9 +35,4 @@ foreach ($connections as $name) {
     }
 }
 
-// Handle forgetting a connection
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['forget_ssid'])) {
-    $forget_ssid = escapeshellarg($_POST['forget_ssid']);
-    shell_exec("sudo nmcli connection delete id $forget_ssid");
-}
 ?>
