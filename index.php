@@ -41,6 +41,8 @@
                         <th>SSID</th>
                         <th>Signal Strength</th>
                         <th>Security</th>
+                        <th>Password</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="available-networks">
