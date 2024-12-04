@@ -6,6 +6,8 @@ $connections = explode("\n", trim($connections));
 // Get the name of the currently active connection
 $active_connection = trim(shell_exec("nmcli -t -f NAME connection show --active"));
 
+dd($active_connection);
+
 foreach ($connections as $name) {
     if (!empty($name) && $name != 'Crafter3D' && $name != 'Wired connection 1' && $name != 'lo') {
         // Highlight the active connection
