@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connect_ssid'])) {
     // Display feedback
     if (strpos($result, 'successfully activated') !== false) {
         echo "<p class='success'>Successfully connected to $ssid.</p>";
+        shell_exec("sudo nmcli con down Crafter3D 2>&1");
     } else {
         echo "<p class='error'>Failed to connect to $ssid. Error: $result</p>";
     }

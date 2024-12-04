@@ -12,22 +12,6 @@
         <h1>Crafter3D Network Manager</h1>
     </header>
     <main>
-        <!-- Section: Current Wi-Fi Connections -->
-        <section>
-            <h2>Current Wi-Fi Connections</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>SSID</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php include 'list_connections.php'; ?>
-                </tbody>
-            </table>
-        </section>
-
         <!-- Section: Available Wi-Fi Networks -->
         <section>
             <h2>Available Wi-Fi Networks</h2>
@@ -47,6 +31,23 @@
                 </thead>
                 <tbody id="available-networks">
                     <?php include 'list_available_networks.php'; ?>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Section: Current Wi-Fi Connections -->
+        <section>
+            <h2>Current Wi-Fi Connections</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SSID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php include 'list_connections.php'; ?>
                 </tbody>
             </table>
         </section>
