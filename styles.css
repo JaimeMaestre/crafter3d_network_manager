@@ -120,6 +120,14 @@ table tbody tr:hover {
     text-align: center;
 }
 
+/* Highlight active connection */
+.active-connection {
+    background-color: #d1e7dd; /* Light green */
+    color: #0f5132; /* Dark green */
+    font-weight: bold;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     main {
