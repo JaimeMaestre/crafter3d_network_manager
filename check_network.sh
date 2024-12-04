@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Sleep for 30 seconds before starting
-#sleep 2
+sleep 15
 
 # Check the network connection state
 network_state=$(sudo nmcli -t -f STATE general)
