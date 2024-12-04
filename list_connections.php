@@ -5,8 +5,10 @@ $connections = explode("\n", trim($connections));
 
 // Get the name of the currently active connection
 $active_connection = trim(shell_exec("nmcli -t -f NAME connection show --active"));
-
-echo $active_connection;
+// Remove unwanted words from the active connection
+$unwanted_words = ['Crafter3D', 'Wired connection 1', 'lo'];
+$active_connection = str_replace($unwanted_words, '', $active_connection);
+$active_connection = trim($active_connection); // Remove any extra spaces
 
 foreach ($connections as $name) {
     if (!empty($name) && $name != 'Crafter3D' && $name != 'Wired connection 1' && $name != 'lo') {
