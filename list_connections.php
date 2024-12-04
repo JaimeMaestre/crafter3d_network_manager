@@ -2,7 +2,7 @@
 $connections = shell_exec("nmcli -t -f NAME connection show");
 $connections = explode("\n", trim($connections));
 foreach ($connections as $name) {
-    if (!empty($name)) {
+    if (!empty($name) and $name!='Crafter3D' and $name!='Wired connection 1' and $name!='preconfigured' and $name!='lo') {
         echo "<tr>
                 <td>$name</td>
                 <td>
