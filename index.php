@@ -12,13 +12,14 @@
         <h1>Crafter3D Network Manager</h1>
     </header>
     <main>
-        <!-- Section: Available Wi-Fi Networks -->
-        <section>
-            <h2>Available Wi-Fi Networks</h2>
-            <div class="controls">
-                <button id="refresh-button">Refresh List (<span id="countdown">60</span>s)</button>
-                <button id="stop-auto-refresh-button">Stop Auto-Refresh</button>
-            </div>
+      <!-- Section: Available Wi-Fi Networks -->
+      <section>
+        <h2>Available Wi-Fi Networks</h2>
+        <div class="controls">
+            <button id="refresh-button">Refresh List (<span id="countdown">60</span>s)</button>
+            <button id="stop-auto-refresh-button">Stop Auto-Refresh</button>
+        </div>
+        <form method="post">
             <table>
                 <thead>
                     <tr>
@@ -33,7 +34,9 @@
                     <?php include 'list_available_networks.php'; ?>
                 </tbody>
             </table>
-        </section>
+        </form>
+      </section>
+
 
 
         <!-- Section: Current Wi-Fi Connections -->
