@@ -21,6 +21,4 @@ elif [[ "$active_connection" != "Crafter3D" && "$crafter3d_state" -eq 1 ]]; then
   else
     echo "Failed to disable hotspot 'Crafter3D'."
   fi
-else
-  echo "Hotspot 'Crafter3D' is already inactive."
 fi
